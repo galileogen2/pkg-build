@@ -5,6 +5,9 @@ MAINTAINER Vipin Madhavanunni <vipmadha@gmail.com>
 # In case you need proxy
 #RUN echo 'Acquire::http::Proxy "http://127.0.0.1:8080";' >> /etc/apt/apt.conf
 
+# Lets chnage to bash
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+
 # Lets work on
 WORKDIR /tmp
 # Extract the source
