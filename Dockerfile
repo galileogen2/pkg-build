@@ -7,7 +7,7 @@ MAINTAINER Vipin Madhavanunni <vipmadha@gmail.com>
 
 # Lets chnage to bash
 #RUN rm /bin/sh && ln -s /bin/bash /bin/sh
-SHELL ["/bin/bash", "-x"]
+SHELL ["/bin/bash"]
 
 # Lets work on
 WORKDIR /tmp
