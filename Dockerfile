@@ -12,7 +12,7 @@ SHELL ["/bin/bash"]
 # Lets work on
 WORKDIR /tmp
 # Extract the source
-RUN tar -xvfz /source/meta-clanton_v1.2.1.1.tar.gz
+RUN tar -xvzf /source/meta-clanton_v1.2.1.1.tar.gz 
 # simplify the directory name
 RUN mv meta-clanton_v1.2.1.1 clanton_v1
 WORKDIR /tmp/clanton_v1/
