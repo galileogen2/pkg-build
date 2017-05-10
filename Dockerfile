@@ -7,7 +7,7 @@ MAINTAINER Vipin Madhavanunni <vipmadha@gmail.com>
 
 # Lets chnage to bash
 #RUN rm /bin/sh && ln -s /bin/bash /bin/sh
-SHELL ["/bin/bash"]
+#SHELL ["/bin/bash"]
 
 # Lets work on
 WORKDIR /tmp
@@ -20,11 +20,11 @@ WORKDIR /tmp/clanton_v1/
 RUN chmod +x setup.sh
 RUN ./setup.sh
 # create the build env files
-RUN source oe-init-build-env build
+RUN /bin/bash -c "source oe-init-build-env build"
 # If building in docker or as root
 WORKDIR /tmp/clanton_v1/build
 RUN touch conf/sanity.conf
 # build the full image
 WORKDIR /tmp/clanton_v1/
-RUN source oe-init-build-env build && bitbake image-full
+RUN /bin/bash -c "source oe-init-build-env build && bitbake image-full"
 # 
