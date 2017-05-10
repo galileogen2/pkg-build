@@ -15,13 +15,12 @@ WORKDIR /build/clanton_v1/
 # run the setup script which will get all required code base
 RUN chmod +x setup.sh
 RUN ./setup.sh
-# set the build env
+# create the build env files
 RUN source oe-init-build-env build
 # If building in docker or as root
 WORKDIR /build/clanton_v1/build
 RUN touch conf/sanity.conf
 # build the full image
 WORKDIR /build/clanton_v1/
-RUN source oe-init-build-env build \
-    bitbake image-full
+RUN source oe-init-build-env build && bitbake image-full
 # 
