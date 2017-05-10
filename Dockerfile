@@ -6,7 +6,8 @@ MAINTAINER Vipin Madhavanunni <vipmadha@gmail.com>
 #RUN echo 'Acquire::http::Proxy "http://127.0.0.1:8080";' >> /etc/apt/apt.conf
 
 # Lets chnage to bash
-RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+#RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+SHELL ["/bin/bash", "-x"]
 
 # Lets work on
 WORKDIR /tmp
